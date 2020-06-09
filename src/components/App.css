@@ -1,3 +1,48 @@
-.App-main > p {
-    background-color: rgba(23, 23, 180, 0.5);
+.App-root{
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: rgb(84,55,205);
+    background: radial-gradient(circle, rgba(84,55,205,1) 0%, rgba(39,48,130,1) 100%);
+}
+.App-header {
+    display: flex;
+    justify-content: flex-end;
+}
+.App-title-date{
+    font-size: 1rem;
+    margin: 0;
+    text-decoration: underline;
+    /*color: ghostwhite;*/
+    color: rgba(248, 248, 255, 0.8);
+    font-weight: lighter;
+}
+.App-main{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.App-passage{
+    max-width: 85%;
+    /*margin: auto;*/
+    background-color: rgba(13, 13, 75, 0.3);
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: ghostwhite;
+    box-shadow: 0 0 4px black;
+    text-shadow: 0 0 8px black;
+}
+/*App-footer {*/
+/*}*/
+/*.App-author-link{}*/
+
+@media all and (min-width: 1024px){
+    .App-passage{
+        max-width: 70%;
+    }
 }
