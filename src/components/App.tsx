@@ -1,48 +1,75 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import { getVerseOfTheDay } from './API_YOUVERSION';
-// import { getImageResponse, ImageResponse } from './API_UNSPLASH';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { getVerseOfTheDay } from "../api/youversion";
+import { State } from "../types/state";
 
 function App() {
-  const date = new Date(Date.now()).toDateString();
-  const [passage, setPassage] = useState<string>('');
-  // const [imageResponse, setImageResponse] = useState<ImageResponse>({
-  //   user: { name: '', links: { html: '' } },
-  //   urls: { regular: '', full: '', small: '' },
-  // });
+  const getDate = () => new Date(Date.now()).toDateString();
+  const [date] = useState(getDate());
+  const [apiResponse, setApiResponse] = useState("");
+  const [state, setState] = useState<State>({
+    cards: [],
+  });
+  // State changed? Console it
   useEffect(() => {
-    getVerseOfTheDay().then((p) => setPassage(p));
-    // getImageResponse().then((i) => setImageResponse(i));
+    if (process.env.REACT_APP_DEVELOPMENT_MODE === "development") {
+      console.info(state);
+    }
+  }, [state]);
+  // Fetch on component rendering
+  useEffect(() => {
+    getVerseOfTheDay().then((p) => setApiResponse(p));
   }, []);
-
-  // const unsplashImage = {
-  //   backgroundImage: 'url(' + imageResponse.urls.regular + ')',
-  //   minHeight: '100vh',
-  //   backgroundPosition: 'center',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundSize: 'cover',
-  //   display: 'flex',
-  //   flexDirection: 'column' as 'column',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  // };
-
+  // API has some response?
+  useEffect(() => {
+    if (apiResponse !== "") {
+      setState((state) => ({
+        ...state,
+        cards: [...state.cards, { id: getDate(), content: apiResponse }],
+      }));
+    }
+  }, [apiResponse]);
   return (
     <div className="App-root">
-      {/*<aside style={unsplashImage} />*/}
       <header className="App-header">
-        <span className="App-title-date">{`${date}`}</span>
+        <section>
+          <span className="App-title-date">{`${date}`}</span>
+          <button className="header__control highlight">🔑Login here</button>
+        </section>
+        <section>
+          <button className="header__control">➕</button>
+          <button className="header__control">📆</button>
+          <button className="header__control">⏰</button>
+          <button className="header__control">🛒</button>
+          <button className="header__control">📧</button>
+          <button className="header__control">☔</button>
+          <button className="header__control">🔢</button>
+        </section>
       </header>
       <main className="App-main">
-        <h1 className="App-passage">{passage}</h1>
+        {state.cards.map((e) => (
+          <article key={e.id} className="App-passage">
+            <span className="content">{e.content}</span>
+            <aside className="card-options">
+              <button className="card-options__control">📌</button>
+              <button className="card-options__control">✅</button>
+              <button className="card-options__control">⚙</button>
+              {/* <button className="card-options__control">💾</button> */}
+              <button className="card-options__control">🚮</button>
+            </aside>
+          </article>
+        ))}
+
+        {state.cards.length > 0 &&
+          state.cards.length < 9 &&
+          new Array(9 - state.cards.length)
+            .fill({ id: Math.random() * 1000, content: "" })
+            .map((e) => (
+              <article key={e.id} className="App-passage">
+                ...
+              </article>
+            ))}
       </main>
-      {/*<footer>*/}
-      {/*  <h2 className="App-footer">*/}
-      {/*    Photo by{' '}*/}
-      {/*    <a className="App-author-link" href={imageResponse.user.links.html}>{imageResponse.user.name}</a>{' '}*/}
-      {/*    from <a href="https://unsplash.com">Unsplash</a>*/}
-      {/*  </h2>*/}
-      {/*</footer>*/}
     </div>
   );
 }

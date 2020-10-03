@@ -1,5 +1,4 @@
-const API_URL =
-  'https://us-central1-daily-reminder-ca.cloudfunctions.net/helloWorld';
+const API_URL = process.env.REACT_APP_FUNCTION_ENDPOINT || "";
 const getImageResponse = async () => {
   const response = await fetch(API_URL)
     .then((a) => {

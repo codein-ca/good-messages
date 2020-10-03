@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
 * {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
-
-html {
-  font-size: 24px;
+  font-family: "Open Sans", sans-serif;
+  transition-property: all;
+  transition-delay: 50ms;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
 }
 
 body {
+  font-size: 16px;
   margin: 0;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
+  user-select: none;
 }
 #root {
-  min-height: 100vh;
+  height: 100%;
 }
