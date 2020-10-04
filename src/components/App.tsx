@@ -34,16 +34,49 @@ function App() {
       <header className="App-header">
         <section>
           <span className="App-title-date">{`${date}`}</span>
-          <button className="header__control highlight">🔑Login here</button>
+          <button className="header__control highlight">
+            <span role="img" aria-label="Login here">
+              🔑
+            </span>
+            Login here
+          </button>
         </section>
         <section>
-          <button className="header__control">➕</button>
-          <button className="header__control">📆</button>
-          <button className="header__control">⏰</button>
-          <button className="header__control">🛒</button>
-          <button className="header__control">📧</button>
-          <button className="header__control">☔</button>
-          <button className="header__control">🔢</button>
+          <button className="header__control">
+            <span role="img" aria-label="Login here">
+              ➕
+            </span>
+          </button>
+          <button className="header__control">
+            <span role="img" aria-label="Login here">
+              📆
+            </span>
+          </button>
+          <button className="header__control">
+            <span role="img" aria-label="Login here">
+              ⏰
+            </span>
+          </button>
+          <button className="header__control">
+            <span role="img" aria-label="Login here">
+              🛒
+            </span>
+          </button>
+          <button className="header__control">
+            <span role="img" aria-label="Login here">
+              📧
+            </span>
+          </button>
+          <button className="header__control">
+            <span role="img" aria-label="Login here">
+              ☔
+            </span>
+          </button>
+          <button className="header__control">
+            <span role="img" aria-label="Login here">
+              🔢
+            </span>
+          </button>
         </section>
       </header>
       <main className="App-main">
@@ -51,11 +84,27 @@ function App() {
           <article key={e.id} className="App-passage">
             <span className="content">{e.content}</span>
             <aside className="card-options">
-              <button className="card-options__control">📌</button>
-              <button className="card-options__control">✅</button>
-              <button className="card-options__control">⚙</button>
-              {/* <button className="card-options__control">💾</button> */}
-              <button className="card-options__control">🚮</button>
+              <button className="card-options__control">
+                <span role="img" aria-label="Login here">
+                  📌
+                </span>
+              </button>
+              <button className="card-options__control">
+                <span role="img" aria-label="Login here">
+                  ✅
+                </span>
+              </button>
+              <button className="card-options__control">
+                <span role="img" aria-label="Login here">
+                  ⚙
+                </span>
+              </button>
+              {/* <button className="card-options__control"><span role="img" aria-label="Login here">💾</span></button> */}
+              <button className="card-options__control">
+                <span role="img" aria-label="Login here">
+                  🚮
+                </span>
+              </button>
             </aside>
           </article>
         ))}
