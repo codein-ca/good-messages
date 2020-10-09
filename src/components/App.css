@@ -1,0 +1,132 @@
+.App-root {
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1f2428;
+}
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+  padding: 8px;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to bottom, #13274f, #0066b2);
+  box-shadow: 0px 0px 0px 1px rgba(248, 248, 255, 0.15);
+}
+
+.App-header .highlight {
+  text-shadow: 0 0 3px #000000;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: all 100ms ease-in-out;
+  border: 1px solid black;
+  background: rgba(237, 20, 61, 0.75);
+  color: white;
+}
+
+.App-header .highlight:hover,
+.App-header .highlight:focus {
+  transform: scale(1);
+  color: rgb(238 215 219);
+  background: crimson;
+  border: 1px solid white;
+}
+
+.App-header > * {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-title-date {
+  margin: 0 1rem 0 0;
+  color: rgba(248, 248, 255, 0.8);
+}
+.App-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8px;
+  border-top: 1px solid rgba(248, 248, 255, 0.15);
+}
+.App-passage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100px;
+  margin: 4px auto;
+  background: radial-gradient(circle, #00308f, #002d62);
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  word-spacing: 0.25em;
+  color: ghostwhite;
+  box-shadow: 0 0 4px rgb(0 0 0);
+  text-shadow: 0 0 8px #161f46;
+}
+.App-passage:hover {
+  background-color: rgb(255 255 255 / 15%);
+  box-shadow: 0 0 4px 2px rgb(0 0 0 / 50%);
+}
+
+.card-options {
+  margin-left: 8px;
+  margin-right: -16px;
+}
+
+/* shared definitions --- good candidates for a new component */
+.card-options__control,
+.button {
+  font-size: 1.25em;
+  background: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: linear-gradient(to bottom, #1c7ce0, #0066b2);
+  border-radius: 4px;
+  box-shadow: 0 0 4px 0 #000000;
+  margin: 2px 1px;
+}
+.card-options__control:hover,
+.card-options__control:focus,
+.button:hover,
+.button:focus {
+  /* transform: scale(1.1); */
+  border: 2px solid black;
+}
+
+@media all and (min-width: 1024px) {
+  .App-header {
+    flex-direction: row;
+  }
+
+  .App-passage {
+    margin: 8px auto;
+    width: calc(33% - (8px * 2));
+    min-width: calc(33% - (8px * 2));
+    max-width: calc(33% - (8px * 2));
+    /* height: calc((100vh - 100px) / 3); */
+  }
+
+  .App-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+}
