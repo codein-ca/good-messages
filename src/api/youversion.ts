@@ -14,7 +14,7 @@ const getVerseOfTheDay = async () => {
       return a.json();
     })
     .then((b: PassageResponse) => {
-      console.log(b);
+      // console.log(b);
       return b.verse.text;
     });
   return response;

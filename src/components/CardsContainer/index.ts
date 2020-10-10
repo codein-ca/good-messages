@@ -1,3 +1,3 @@
-import { Component as CardsContainer } from "./Component";
+import { CardsContainer } from "./CardsContainer";
 
 export default CardsContainer;

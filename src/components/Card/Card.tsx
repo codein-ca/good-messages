@@ -1,7 +1,7 @@
 import React from "react";
-import { Card } from "../../types/state";
+import { CardT } from "../../types";
 import Button from "../Button";
-export const Component = ({ state }: { state: Card }) => {
+export const Card = ({ state }: { state: CardT }) => {
   return (
     <article key={state.id} className="App-passage">
       <span className="content">{state.content}</span>

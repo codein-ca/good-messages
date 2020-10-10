@@ -1,5 +1,6 @@
 import React from "react";
-export const Component = ({
+
+export const Button = ({
   isHighlighted,
   emoji,
   text,
@@ -14,6 +15,7 @@ export const Component = ({
 }) => {
   return (
     <button
+      title={text || ariaLabel}
       className={`button ${
         isHighlighted ? "highlight" : ""
       } ${customClassname}`}

@@ -2,7 +2,7 @@ import React from "react";
 import { getDate } from "../../utils/date";
 import Button from "../Button";
 import HeaderControls from "../HeaderControls";
-export const Component = () => {
+export const Header = () => {
   return (
     <header className="App-header">
       <section>

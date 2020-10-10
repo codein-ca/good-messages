@@ -1,3 +1,3 @@
-import { Component as Card } from "./Component";
+import { Card } from "./Card";
 
 export default Card;

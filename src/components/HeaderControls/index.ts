@@ -1,2 +1,2 @@
-import { Component as HeaderControls } from "./Component";
+import { HeaderControls } from "./HeaderControls";
 export default HeaderControls;

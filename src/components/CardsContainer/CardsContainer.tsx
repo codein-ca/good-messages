@@ -1,10 +1,10 @@
 import React from "react";
-import { State } from "../../types/state";
+import { StateT } from "../../types";
 import Card from "../Card";
-export const Component = ({ state }: { state: State }) => (
+export const CardsContainer = ({ state }: { state: StateT }) => (
   <>
     {state.cards.map((e) => (
-      <Card state={e} />
+      <Card key={e.id} state={e} />
     ))}
 
     {process.env.REACT_APP_DEVELOPMENT_MODE === "development" &&

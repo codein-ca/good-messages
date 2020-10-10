@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button";
-export const Component = () => {
+export const HeaderControls = () => {
   return (
     <aside>
       <Button emoji="➕" ariaLabel="Emoji of plus sign" />
